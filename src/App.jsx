@@ -1,7 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import usedata from "./hooks/useData"
+import CountrySelect from "./components/CountrySelect"
 
 function App() {
+  const data = usedata()
+  console.log(data);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -17,7 +22,15 @@ function App() {
         >
           Learn React
         </a>
+        <div>
+      <p>{data}</p>
+      <div style={{textAlign: 'center', display: 'flex', justifyContent: 'center'}}>
+        <CountrySelect/>
+      </div>
+    </div>
       </header>
+
+      
     </div>
   );
 }
